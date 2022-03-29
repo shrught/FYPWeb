@@ -23,3 +23,12 @@ h2 {
     padding-top: 140px;
     font-size: 14px;
   }
+
+  #nav0 {
+    background-color: black !important;
+    margin:0;
+    padding:0;
+    height:50px;
+    width:100%;
+  }
+

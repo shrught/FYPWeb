@@ -9,56 +9,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+
     <link rel='stylesheet prefetch' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/rwd.table.min.css'>
 
-    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="C:\Users\User\Desktop\FYP\code\Create_LoginPage\FYPWeb\templates\css\style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <main>
 <body>
-<section class="hero is-fullheight" style="background-color:#c4fdf6;">
+<section class="hero is-fullheight" >
 
     <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="{{ url_for('main.index') }}" class="navbar-item" style="font-size: medium;">
-                            Home
-                        </a>
-                        {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('main.profile') }}" class="navbar-item" style="font-size: medium;">
-                            Profile
-                        </a>
-                        {% endif %}
-                        {% if not current_user.is_authenticated %}
-                        <a href="{{ url_for('auth.login') }}" class="navbar-item" style="font-size: medium;">
-                            Login
-                        </a>
-                        <a href="{{ url_for('auth.signup') }}" class="navbar-item" style="font-size: medium;">
-                            Sign Up
-                        </a>
-                        {% endif %}
-                        {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('auth.logout') }}" class="navbar-item" style="font-size: medium;">
-                            Logout
-                        </a>
-                        {% endif %}
+        <nav class="navbar expand" id="nav0"  style="padding: 0; margin: 0;">    
+            <div class="container expand" style="padding: 0 !important; margin: 0 !important;">
+                <div class="row expand" style="padding: 0; margin: 0;">
+                    <div class="col-8">
+                        <img src="C:\Users\User\Desktop\FYP\code\Create_LoginPage\FYPWeb\templates\PwCTitle.jpg" alt="PwC Icon">
+                    </div> 
+                    <div class="col-4">
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+                            <div class="navbar-end">
+                                <a href="{{ url_for('main.index') }}" class="navbar-item" style="font-size: medium;">
+                                    Home
+                                </a>
+                                {% if current_user.is_authenticated %}
+                                <a href="{{ url_for('main.profile') }}" class="navbar-item" style="font-size: medium;">
+                                    Profile
+                                </a>
+                                {% endif %}
+                                {% if not current_user.is_authenticated %}
+                                <a href="{{ url_for('auth.login') }}" class="navbar-item" style="font-size: medium;">
+                                    Login
+                                </a>
+                                <a href="{{ url_for('auth.signup') }}" class="navbar-item" style="font-size: medium;">
+                                    Sign Up
+                                </a>
+                                {% endif %}
+                                {% if current_user.is_authenticated %}
+                                <a href="{{ url_for('auth.logout') }}" class="navbar-item" style="font-size: medium;">
+                                    Logout
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
 
-    <div class="hero-body">
+    <div class="hero-body" style="background-color:#E6E6E6;">
         <div class="container has-text-centered">
             {% block content %}{% endblock %}
         </div>
     </div>
 </section>
 </main>
-
 {% block javascript %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+crossorigin="anonymous"></script>
 </body>
 </html>
