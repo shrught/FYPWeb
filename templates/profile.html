@@ -4,12 +4,21 @@
     Welcome, {{name}}!
 </h1>
 <h3>
-    Please Search for Leaked Information with Keywords
+    Please Search for Leaked Information with ID or Keywords in Username/Email
 </h3>
 
 <div class="container">
     <div class="row">
       <div class="col-xs-12">
+        <div class="dropdown">
+          <button id="searchby" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Search by
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a type="button" id="idbtn" class="btn btn-primary">ID</a></li>
+            <li><a type="button" id="usernamebtn" class="btn btn-primary">Username</a></li>
+            <li><a type="button" id="emailbtn" class="btn btn-primary">Email</a></li>
+          </ul>
+        </div>
         <form id="form">
           <input class="form-contol" id="user-input" placeholder="Enter Keywords">
           <button id="button" class="btn btn-secondary">Search</button>

@@ -2,9 +2,43 @@ d3.csv("static/mtgox_accounts.csv").then(function(data){
     var d = data;
     var button = d3.select("#button");
     var form = d3.select("#form");
+    var searchid;
+    var searchbyusername;
+    var searchbyemail;
+    var idbtn = document.getElementById("idbtn");
+    idbtn.onclick = SearchbyID;
+    var usernamebtn = document.getElementById("usernamebtn");
+    usernamebtn.onclick = SearchbyUN;
+    var emailbtn = document.getElementById("emailbtn");
+    emailbtn.onclick = SearchbyEM;
+    console.log("hello");
+    
     button.on("click", runEnter);
     form.on("submit", runEnter);
+    
+function SearchbyID(){
+    searchid = true;
+    searchbyemail = false;
+    searchbyusername = false;
+    console.log("ID");
+    document.getElementById("searchby").innerHTML = "Search by ID";
+}
 
+function SearchbyUN(){
+    searchid = false;
+    searchbyemail = false;
+    searchbyusername = true;
+    console.log("UN");
+    document.getElementById("searchby").innerHTML = "Search by username";
+}
+
+function SearchbyEM(){
+    searchid = false;
+    searchbyemail = true;
+    searchbyusername = false;
+    console.log("EM");
+    document.getElementById("searchby").innerHTML = "Search by email";
+}
 // Defining the function
 function runEnter() {
 
@@ -18,8 +52,21 @@ function runEnter() {
     var inputValue = d3.select("#user-input").property("value");
     
     // This code will filter the movies looking at the actors column. It will store the values when there is a match from the text sequence the user entered and the text from our actors column from the CSV data.
-    var filteredResult = 
-    d.filter(d => d.Username.includes(inputValue));
+    
+    
+    var filteredResult;
+    if(searchbyusername === true){
+        filteredResult = d.filter(d => d.Username.includes(inputValue));
+    }
+    else if(searchid === true){
+        filteredResult = d.filter(d => d.UserID.includes(inputValue));
+    }
+    else if(searchbyemail === true){
+        filteredResult = d.filter(d => d.Email.includes(inputValue));
+    }
+    else{
+        filteredResult = d.filter(d => d.Username.includes(inputValue));
+    }
     
     // This was the easiest approach I found to sort the results by a different column in descending order. I had to include a new script in my head to use the _.sortBy 
     //This is the script:  
