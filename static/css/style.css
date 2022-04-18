@@ -23,3 +23,27 @@ h2 {
     padding-top: 140px;
     font-size: 14px;
   }
+
+  #nav0 {
+    background-color: black !important;
+    padding: 10px 16px;
+  }
+
+  .nav-link{
+    font-size: large;
+    color: white !important;
+    font-family: Georgia;
+  }
+
+  .navbar-item{
+    padding: 10px 20px;    
+  }
+  
+  #LargeIcon{
+    margin: 30px 50px !important;
+    height: 100px !important;
+  }
+
+  #SmallIcon{
+    height: 40px !important;
+  }
