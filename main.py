@@ -18,6 +18,11 @@ def index():
 def profile():
     return render_template('profile.html', name=current_user.name)
 
+@main.route('/reports') 
+@login_required
+def reports():
+    return render_template('reports.html', name=current_user.name)
+
 app = create_app() # we initialize our flask app using the __init__.py function
 if __name__ == '__main__':
     db.create_all(app=create_app()) # create the SQLite database
