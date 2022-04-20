@@ -59,7 +59,7 @@ function runEnter() {
         filteredResult = d.filter(d => d.Username.includes(inputValue));
     }
     else if(searchid === true){
-        filteredResult = d.filter(d => d.UserID.includes(inputValue));
+        filteredResult = d.filter(d => d.UserID==inputValue);
     }
     else if(searchbyemail === true){
         filteredResult = d.filter(d => d.Email.includes(inputValue));
