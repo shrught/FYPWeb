@@ -21,55 +21,92 @@
 
     <div class="hero-head">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav0">
-            <!--<div class="container">
-                <div class="row">
-                    <div class="col-8">-->
-                        <a class="navbar-brand">
-                            <img class="d-none d-md-block" id="LargeIcon" src="{{ url_for('static', filename='image/PwCIconFinal.png') }}" alt="PwC Icon">
-                            <img class="d-md-none" id="SmallIcon" src="{{ url_for('static', filename='image/PwCIconFinal.png') }}" alt="PwC Icon">
-                        </a>
-                    <!--</div>--> 
-                    
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><img src="{{ url_for('static', filename='image/DropdownIcon.png') }}"></span>
-                    </button>
-                    <!--<div class="col-4">-->
-                        <!--<div id="navbarMenuHeroA" class="navbar-menu">-->
-                            <div class="collapse navbar-collapse navbar-end" id="navbarSupportedContent">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="navbar-item"><a href="{{ url_for('main.index') }}" class="nav-link">
-                                        Home
-                                    </a></li>
-                                    {% if current_user.is_authenticated %}
-                                    <li class="navbar-item"><a href="{{ url_for('main.profile') }}" class="nav-link">
-                                        Profile
-                                    </a></li>
-                                    {% endif %}
-                                    {% if not current_user.is_authenticated %}
-                                    <li class="navbar-item"><a href="{{ url_for('auth.login') }}" class="nav-link">
-                                        Login
-                                    </a></li>
-                                    <li class="navbar-item"><a href="{{ url_for('auth.signup') }}" class="nav-link">
-                                        Sign Up
-                                    </a></li>
-                                    {% endif %}
-                                    {% if current_user.is_authenticated %}
-                                    <li class="navbar-item"><a href="{{ url_for('auth.logout') }}" class="nav-link">
-                                        Logout
-                                    </a></li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>
-            </div>-->
+            <a class="navbar-brand">
+                <img class="d-none d-md-block" id="LargeIcon" src="{{ url_for('static', filename='image/PwCIconFinal.png') }}" alt="PwC Icon">
+                <img class="d-md-none" id="SmallIcon" src="{{ url_for('static', filename='image/PwCIconFinal.png') }}" alt="PwC Icon">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="{{ url_for('static', filename='image/DropdownIcon.png') }}"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item"><a href="{{ url_for('main.index') }}" class="nav-link">
+                        Home
+                    </a></li>
+                    {% if current_user.is_authenticated %}
+                    <li class="navbar-item"><a href="{{ url_for('main.profile') }}" class="nav-link">
+                        Profile
+                    </a></li>
+                    {% endif %}
+                    {% if not current_user.is_authenticated %}
+                    <li class="navbar-item"><a href="{{ url_for('auth.login') }}" class="nav-link">
+                        Login
+                    </a></li>
+                    <li class="navbar-item"><a href="{{ url_for('auth.signup') }}" class="nav-link">
+                        Sign Up
+                    </a></li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                    <li class="navbar-item"><a href="{{ url_for('auth.logout') }}" class="nav-link">
+                        Logout
+                    </a></li>
+                    {% endif %}
+                </ul>
+            </div>
         </nav>
     </div>
 
     <div class="hero-body" style="background-color:#E6E6E6;">
         <div class="container has-text-centered">
             {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div class="hero-foot">
+        <div class="container d-none d-md-block" id="footer-container-md">
+            <div class="row">
+                <div class="col-2">
+                    <img id="FooterLargeIcon" src="{{ url_for('static', filename='image/PwCIconWhite.png') }}" alt="PwC Icon">
+                </div>
+                <div class="col-xs-12 col-md-9">
+                    <div class="row">
+                        <div class="col-4">
+                            <h5 class="center"><a class="footer-item-md" target="_blank" href="https://www.pwchk.com/">PwC Homepage</a></h5>
+                        </div>
+                        <div class="col-4">
+                            <h5 class="center"><a class="footer-item-md" target="_blank" href="https://www.pwchk.com/en/issues/cybersecurity-and-privacy/dark-lab.htmlPwC">Dark Lab</a></h5>
+                        </div>
+                        <div class="col-4">
+                            <h5 class="center"><a class="footer-item-md" target="_blank" href="https://www.pwchk.com/hk/en/global/forms/contactUsNew.html?parentPagePath=/content/pwc/hk/en&style=red">Contact Us</a></h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p id="footer-p-md">© 2001 - 2022 PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity. Please see www.pwc.com/structure for further details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-md-none">
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="center"><a class="footer-item-xs" target="_blank" href="https://www.pwchk.com/">PwC Homepage</a></h5>>
+                </div>
+                <div class="col-12">
+                    <h5 class="center"><a class="footer-item-xs" target="_blank" href="https://www.pwchk.com/en/issues/cybersecurity-and-privacy/dark-lab.htmlPwC">Dark Lab</a></h5>>
+                </div>
+                <div class="col-12">
+                    <h5 class="center"><a class="footer-item-xs" target="_blank" href="https://www.pwchk.com/hk/en/global/forms/contactUsNew.html?parentPagePath=/content/pwc/hk/en&style=red">Contact Us</a></h5>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12 center">
+                    <img id="FooterSmallIcon" src="{{ url_for('static', filename='image/PwCIconWhite.png') }}" alt="PwC Icon">
+                </div>
+            </div>
+            <div class="row">
+                <p id="footer-p-xs">© 2001 - 2022 PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity. Please see www.pwc.com/structure for further details</p>
+            </div>
         </div>
     </div>
 </section>
