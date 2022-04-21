@@ -33,7 +33,10 @@ def reports():
     pat = '|'.join(emails)
     s = data['Email'].str.extract('('+ pat + ')', expand=False)
     df1 = data.groupby(s).size().reset_index(name='Count')
-    df1.loc[6]=['Others', 61006-276-20692-3329-1012-469-1-917-100-3517-144-354]
+    other_value = 61006
+    for i in range(len(df1['Email'])):
+        other_value -= df1['Count'][i]
+    df1.loc[6]=['Others', other_value]
     Pie_fig = px.pie(df1, values='Count', names='Email')
 
 
