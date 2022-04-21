@@ -16,7 +16,7 @@
       padding: .5em 0;
   }
   
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     table caption {
       display: none;
     }
@@ -28,19 +28,42 @@
     font-size: 14px;
   }
 
-  #nav0 {
-    background-color: black !important;
-    padding: 10px 16px;
+  @media screen and (min-width: 769px){
+    #nav0 {
+      background-color: black !important;
+      padding: 10px 16px;
+    }
   }
 
-  .nav-link{
-    font-size: large;
-    color: white !important;
-    font-family: Georgia;
+  @media screen and (max-width: 768px){
+    #nav0 {
+      background-color: black !important;
+      padding: 20px 10px;
+    }
   }
 
-  .navbar-item{
-    padding: 10px 20px;    
+
+  @media screen and (min-width: 769px){
+    .navbar-item{
+      padding: 10px 20px;    
+    }
+    .nav-link{
+      font-size: 20px !important;
+      color: white !important;
+      font-family: Georgia;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    .navbar-item{
+      padding: 5px 10px;    
+    }
+    .nav-link{
+      font-size: 10px !important;
+      color: white !important;
+      font-family: Georgia;
+      padding: 0px !important;
+    }
   }
   
   #LargeIcon{
@@ -50,6 +73,7 @@
 
   #SmallIcon{
     height: 40px !important;
+    margin: 0px 0px 20px !important;
   }
 
   #footer-container-md{
