@@ -1,32 +1,10 @@
+/*general*/
 
   .center{
     text-align: center;
   }
   
-  h2{
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  .table-bordered {
-    border: 1px solid #ddd !important;
-  }
-  
-  table caption {
-      padding: .5em 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    table caption {
-      display: none;
-    }
-  }
-  
-  .p {
-    text-align: center;
-    padding-top: 140px;
-    font-size: 14px;
-  }
+/*header*/
 
   @media screen and (min-width: 769px){
     #nav0 {
@@ -76,6 +54,68 @@
     margin: 0px 0px 20px !important;
   }
 
+/*body*/
+
+  .hero-body{
+    background-color:#E6E6E6;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  @media screen and (min-width: 769px) {
+    h1{
+      font-size: 43px !important;
+    }
+
+    h2{
+      font-size: 25px !important;
+      text-align: center;
+      padding: 20px 0;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    h1{
+      font-size: 20px !important;
+    }
+
+    h2{
+      font-size: 10px !important;
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
+  
+  .table-bordered {
+    border: 1px solid #ddd !important;
+  }
+  
+  table caption {
+      padding: .5em 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    table caption {
+      display: none;
+    }
+
+    th {
+      font-size: 7px;
+    }
+
+    td {
+      font-size: 7px;
+    }
+  }
+  
+  .p {
+    text-align: center;
+    padding-top: 140px;
+    font-size: 14px;
+  }
+
+/*footer*/
+
   #footer-container-md{
     padding: 20px 0px !important;
   }
@@ -103,8 +143,8 @@
   .footer-item-xs{
     color: white !important;
     font-family: Georgia !important;
-    font-size: 15px !important;
-    padding-top: 15px;
+    font-size: 10px !important;
+    padding-top: 5px;
     text-align: center;
   }
 
